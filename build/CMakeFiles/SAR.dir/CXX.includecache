@@ -1,0 +1,194 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Environment/Environment.hpp
+map
+-
+memory
+-
+vector
+-
+Environment/Support/EnvironmentTypes/AreaType.hpp
+../include/Environment/Environment/Support/EnvironmentTypes/AreaType.hpp
+Environment/Support/Tiles/Tile.hpp
+../include/Environment/Environment/Support/Tiles/Tile.hpp
+
+../include/Environment/Support/Coord.hpp
+
+../include/Environment/Support/EnvironmentTypes/AreaType.hpp
+
+../include/Environment/Support/EnvironmentTypes/TileType.hpp
+map
+-
+utility
+-
+
+../include/Environment/Support/Tiles/Empty.hpp
+Environment/Support/EnvironmentTypes/TileType.hpp
+../include/Environment/Support/Tiles/Environment/Support/EnvironmentTypes/TileType.hpp
+Environment/Support/Tiles/Tile.hpp
+../include/Environment/Support/Tiles/Environment/Support/Tiles/Tile.hpp
+
+../include/Environment/Support/Tiles/Falsepos.hpp
+Environment/Support/EnvironmentTypes/TileType.hpp
+../include/Environment/Support/Tiles/Environment/Support/EnvironmentTypes/TileType.hpp
+Environment/Support/Tiles/Tile.hpp
+../include/Environment/Support/Tiles/Environment/Support/Tiles/Tile.hpp
+
+../include/Environment/Support/Tiles/Target.hpp
+Environment/Support/EnvironmentTypes/TileType.hpp
+../include/Environment/Support/Tiles/Environment/Support/EnvironmentTypes/TileType.hpp
+Environment/Support/Tiles/Tile.hpp
+../include/Environment/Support/Tiles/Environment/Support/Tiles/Tile.hpp
+
+../include/Environment/Support/Tiles/Tile.hpp
+iostream
+-
+Environment/Support/Coord.hpp
+../include/Environment/Support/Tiles/Environment/Support/Coord.hpp
+Environment/Support/EnvironmentTypes/TileType.hpp
+../include/Environment/Support/Tiles/Environment/Support/EnvironmentTypes/TileType.hpp
+
+../include/GeneticAlgorithm/GeneticAlgorithm_NeuralNetwork.hpp
+map
+-
+utility
+-
+vector
+-
+NeuralNetwork/NeuralNetwork.hpp
+../include/GeneticAlgorithm/NeuralNetwork/NeuralNetwork.hpp
+
+../include/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.hpp
+map
+-
+memory
+-
+vector
+-
+GeneticAlgorithm/GeneticAlgorithm_NeuralNetwork.hpp
+../include/GeneticProgrammer/GeneticAlgorithm/GeneticAlgorithm_NeuralNetwork.hpp
+NeuralNetwork/NeuralNetwork.hpp
+../include/GeneticProgrammer/NeuralNetwork/NeuralNetwork.hpp
+
+../include/NeuralNetwork/NeuralNetwork.hpp
+map
+-
+memory
+-
+string
+-
+vector
+-
+NeuralNetwork/Neuron.hpp
+../include/NeuralNetwork/NeuralNetwork/Neuron.hpp
+
+../include/NeuralNetwork/NeuralNetworkController.hpp
+NeuralNetwork/NeuralNetwork.hpp
+../include/NeuralNetwork/NeuralNetwork/NeuralNetwork.hpp
+
+../include/NeuralNetwork/NeuralNetworkFactory.hpp
+NeuralNetwork/NeuralNetwork.hpp
+../include/NeuralNetwork/NeuralNetwork/NeuralNetwork.hpp
+
+../include/NeuralNetwork/Neuron.hpp
+map
+-
+memory
+-
+string
+-
+utility
+-
+vector
+-
+
+../include/Simulation/SARsimulation.hpp
+memory
+-
+utility
+-
+string
+-
+vector
+-
+Environment/Environment.hpp
+../include/Simulation/Environment/Environment.hpp
+Simulation/SearchAgents/SearchAgents.hpp
+../include/Simulation/Simulation/SearchAgents/SearchAgents.hpp
+
+../include/Simulation/SearchAgents/SearchAgents.hpp
+Environment/Support/Tiles/Tile.hpp
+../include/Simulation/SearchAgents/Environment/Support/Tiles/Tile.hpp
+
+../include/Simulation/SearchAgents/SearchAgentsType/Drone.hpp
+vector
+-
+Environment/Support/Coord.hpp
+../include/Simulation/SearchAgents/SearchAgentsType/Environment/Support/Coord.hpp
+Environment/Support/EnvironmentTypes/TileType.hpp
+../include/Simulation/SearchAgents/SearchAgentsType/Environment/Support/EnvironmentTypes/TileType.hpp
+NeuralNetwork/NeuralNetwork.hpp
+../include/Simulation/SearchAgents/SearchAgentsType/NeuralNetwork/NeuralNetwork.hpp
+Simulation/SearchAgents/SearchAgents.hpp
+../include/Simulation/SearchAgents/SearchAgentsType/Simulation/SearchAgents/SearchAgents.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/driver.cpp
+iostream
+-
+NeuralNetwork/Neuron.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/NeuralNetwork/Neuron.hpp
+GeneticProgrammer/GeneticProgrammer_NeuralNetwork.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.hpp
+Simulation/SARsimulation.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/Simulation/SARsimulation.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Environment/Environment.cpp
+random
+-
+Environment/Environment.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Environment/Environment/Environment.hpp
+Environment/Support/Tiles/Empty.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Environment/Environment/Support/Tiles/Empty.hpp
+Environment/Support/Tiles/Falsepos.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Environment/Environment/Support/Tiles/Falsepos.hpp
+Environment/Support/Tiles/Target.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Environment/Environment/Support/Tiles/Target.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp
+GeneticProgrammer/GeneticProgrammer_NeuralNetwork.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticProgrammer/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork.cpp
+iostream
+-
+NeuralNetwork/NeuralNetwork.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork/NeuralNetwork.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkController.cpp
+NeuralNetwork/NeuralNetworkController.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork/NeuralNetworkController.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkFactory.cpp
+iostream
+-
+NeuralNetwork/NeuralNetworkFactory.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork/NeuralNetworkFactory.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/Neuron.cpp
+NeuralNetwork/Neuron.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork/Neuron.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SARsimulation.cpp
+Simulation/SARsimulation.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/Simulation/SARsimulation.hpp
+
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp
+Simulation/SearchAgents/SearchAgentsType/Drone.hpp
+/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SearchAgents/SearchAgentsType/Simulation/SearchAgents/SearchAgentsType/Drone.hpp
+
