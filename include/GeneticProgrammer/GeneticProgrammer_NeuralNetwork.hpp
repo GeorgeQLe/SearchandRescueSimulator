@@ -8,7 +8,21 @@
 #include "GeneticAlgorithm/GeneticAlgorithm_NeuralNetwork.hpp"
 #include "NeuralNetwork/NeuralNetwork.hpp"
 
-namespace nsGeneticProgramer_NeuralNetwork {
+namespace nsGeneticProgrammer_NeuralNetwork {
+
+    enum class GeneticProgrammerErrorTypes {
+        NO_ERROR,
+        COUNT
+    };
+    using GeneticProgrammerError = std::pair<bool, GeneticProgrammerErrorTypes>;
+
+    struct GeneticProgrammerErrorInformation {
+        GeneticProgrammerErrorInformation() { }
+        GeneticProgrammerErrorInformation(GeneticProgrammerError error, const std::string& error_message) : m_error(error), m_error_message(error_message) { }
+
+        GeneticProgrammerError m_error = { false, GeneticProgrammerErrorTypes::NO_ERROR };
+        std::string m_error_message = "GeneticProgrammer: NO ERROR YET";
+    };
 
     struct GeneticProgrammerSettings {
         GeneticProgrammerSettings() { }
@@ -27,27 +41,21 @@ namespace nsGeneticProgramer_NeuralNetwork {
         unsigned m_mutation_rate = 1; // default 1
     };
 
-    struct NeuralNetworkWeights {
-        NeuralNetworkWeights() {
-            m_weights = std::shared_ptr<std::map<unsigned, std::vector<double>>>(new std::map<unsigned, std::vector<double>>);
-        }
-        double score = 0.0;
-        std::shared_ptr<std::map<unsigned, std::vector<double>>> m_weights = nullptr;
-    };
-    using RecordNeuralNetworkWeights = std::vector<NeuralNetworkWeights>;
-
+    using RecordNeuralNetworkWeights = std::vector<nsNeuralNetwork::NeuralNetworkLayers>;
     class GeneticProgrammer_NeuralNetwork {
         public:
         static GeneticProgrammer_NeuralNetwork& get_instance() {
             static GeneticProgrammer_NeuralNetwork instance;
             return instance;
         }
+        /*----------------------------------------------------------------------
+            This function generates pseudo-random weights for the individual
+            neural networks. This function will be used by the GeneticProgrammer
+            to generate the first initial population of neural networks.
+        ----------------------------------------------------------------------*/
+        nsNeuralNetwork::NeuralNetworks generate_neural_networks();
 
-        /*-----------------------------------------------------------------------------
-            This function will test the generated weights in a test neural network and 
-            return the best neural network after a run of testing.
-        -----------------------------------------------------------------------------*/
-        nsNeuralNetwork::NeuralNetwork genetic_algorithm_generate_best_neural_network();
+        nsNeuralNetwork::NeuralNetworks generate_from_existing_neural_networks();
 
         private:
         /*--------------------------------------------------------------------
@@ -61,18 +69,11 @@ namespace nsGeneticProgramer_NeuralNetwork {
             test neural network and record the random weights
             into the m_record_weights.
         ----------------------------------------------------*/
-        NeuralNetworkWeights generate_weights();
-
-        /*----------------------------------------------------------------------
-            This function generates pseudo-random weights for the individual
-            neural networks. This function will be used by the GeneticProgrammer
-            to generate the first initial population of neural networks.
-        ----------------------------------------------------------------------*/
-        std::vector<nsNeuralNetwork::NeuralNetwork> generate_random_population();
+        nsNeuralNetwork::NeuralNetworkLayers generate_layers();
 
         // contains all the previous weight combinations and their scores
         RecordNeuralNetworkWeights m_record_weights;
     };
 }
 
-#endif
+#endif // GENETICPROGRAMMER_NEURALNETWORK_HPP

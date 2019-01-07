@@ -27,7 +27,7 @@ set(SAR_HEADERS
     include/Environment/Environment.hpp
     include/Environment/Support/Coord.hpp
     include/Environment/Support/EnvironmentTypes/AreaType.hpp
-    include/Environment/Support/EnvironmentTypes/TileType.hpp
+    include/Environment/Support/EnvironmentTypes/TerrainType.hpp
     include/Environment/Support/Tiles/Empty.hpp
     include/Environment/Support/Tiles/Falsepos.hpp
     include/Environment/Support/Tiles/Target.hpp

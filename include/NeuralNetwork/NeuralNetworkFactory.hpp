@@ -16,19 +16,23 @@ namespace nsNeuralNetworkFactory {
     };
 
     class NeuralNetworkFactory {
-    public:
-    static NeuralNetworkFactory& get_instance() {
-        static NeuralNetworkFactory instance;
-        return instance;
-    }
+        public:
+        static NeuralNetworkFactory& get_instance() {
+            static NeuralNetworkFactory instance;
+            return instance;
+        }
 
-    nsNeuralNetwork::NeuralNetwork construct_neural_network(unsigned int num_layers, nsNeuralNetworkFactory::NeuralNetworkLayerSizes layer_ratios);
+        nsNeuralNetwork::NeuralNetwork construct_neural_network(unsigned int num_layers, nsNeuralNetworkFactory::NeuralNetworkLayerSizes layer_ratios);
 
-    private:
-    NeuralNetworkFactory() { }
+        private:
+        /*---------------------------------------------------------------------
+            This class is a singleton and so to prevent the user from creating
+            more than one of this class, we make the constructor private.
+        ---------------------------------------------------------------------*/
+        NeuralNetworkFactory() { }
 
-    unsigned int m_current_neural_network_id = 1;
-};
+        unsigned int m_current_neural_network_id = 1;
+    };
 }
 
-#endif
+#endif // NEURALNETWORKFACTORY_HPP

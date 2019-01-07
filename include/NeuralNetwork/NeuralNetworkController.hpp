@@ -36,4 +36,4 @@ namespace nsNeuralNetworkController {
     };
 }
 
-#endif
+#endif // NEURALNETWORKCONTROLLER_HPP

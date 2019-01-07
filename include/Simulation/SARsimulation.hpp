@@ -1,5 +1,6 @@
 /*  Copyright 2018 George Le
 
+    This file contains the declarations for the main search and rescue simulation controller.
 */
 #ifndef SARSIMULATION_HPP
 #define SARSIMULATION_HPP
@@ -11,18 +12,25 @@
 
 #include "Environment/Environment.hpp"
 #include "Simulation/SearchAgents/SearchAgents.hpp"
+#include "Simulation/SearchAgents/SearchAgentsType/SearchAgentsTypes.hpp"
 
 namespace nsSARsimulation {
     enum class enSimulationErrorTypes {
-        NO_ERROR,
-        ENVIRONMENT_SETTINGS_ERROR,
-        SIMULATION_SETTINGS_ERROR,
-        COUNT
+        no_error,
+        environment_settings_error,
+        simulation_settings_error,
+        count
     };
     using SimulationError = std::pair<bool, enSimulationErrorTypes>;
 
     struct SimulationErrorInformation {
         SimulationErrorInformation() { }
+        SimulationErrorInformation(const SimulationErrorInformation& error) {
+            if(error.m_simulation_error.first) {
+                m_simulation_error = error.m_simulation_error;
+                m_error_message = error.m_error_message;
+            }
+        }
         SimulationErrorInformation(const SimulationError& error, const std::string& error_message) {
             if(error.first) {
                 m_simulation_error = error;
@@ -30,13 +38,15 @@ namespace nsSARsimulation {
             }
         }
 
-        SimulationError m_simulation_error = { false, enSimulationErrorTypes::NO_ERROR };
+        SimulationError m_simulation_error = { false, enSimulationErrorTypes::no_error };
         std::string m_error_message = "NO ERROR YET";
     };
 
     enum class enSimulationSetupErrorTypes {
-        NO_ERROR,
-        SIMULATION_SETUP_ERROR
+        no_error,
+        number_search_agents_less_than_or_equal_to_zero,
+        simulation_settings_error,
+        count
     };
     using SimulationSetupError = std::pair<bool, enSimulationSetupErrorTypes>;
     using SimulationTargets = std::vector<std::pair<unsigned, unsigned>>;
@@ -50,12 +60,13 @@ namespace nsSARsimulation {
             }
         }
 
-        SimulationSetupError m_simulation_error = { false, enSimulationSetupErrorTypes::NO_ERROR };
+        SimulationSetupError m_simulation_error = { false, enSimulationSetupErrorTypes::no_error };
         std::string m_error_message = "NO ERROR YET";
     };
 
     struct SimulationResult {
         SimulationResult() { }
+        SimulationResult(const SimulationErrorInformation& error) : m_error(error) { }
         SimulationResult(bool success, unsigned number_moves, unsigned number_false_pos_found, unsigned number_false_pos_disregarded)
         : m_success(success), m_number_moves(number_moves), m_number_false_pos_found(number_false_pos_found), m_number_false_pos_disregarded(number_false_pos_disregarded) {}
 
@@ -64,6 +75,7 @@ namespace nsSARsimulation {
         unsigned m_number_false_pos_found = 0;
         unsigned m_number_false_pos_disregarded = 0;
         
+        SimulationErrorInformation m_error;
         SimulationTargets m_targets;
     };
 
@@ -96,19 +108,17 @@ namespace nsSARsimulation {
         SimulationSearchAgentFleet m_agents;
     };
 
-    class SimulationSettings {
-        public:
+    struct SimulationSettings {
         SimulationSettings() { }
         SimulationSettings(unsigned num_of_searchers, unsigned num_of_targets, unsigned frequency_false_pos)
         : m_setup(true), m_num_searchers(num_of_searchers), m_num_search_targets(num_of_targets), m_frequency_false_positive(frequency_false_pos) {}
 
         bool check_simulation_settings() const { return m_setup; }
 
-        private:
         bool m_setup = false;
-        unsigned m_num_searchers = 0;
-        unsigned m_num_search_targets = 0;
-        unsigned m_frequency_false_positive = 0;
+        unsigned m_num_searchers = -1;
+        unsigned m_num_search_targets = -1;
+        unsigned m_frequency_false_positive = -1;
     };
 
     class SARsimulation {
@@ -127,12 +137,19 @@ namespace nsSARsimulation {
         --------------------------------------------------------------------------------*/
         SimulationResult run_simulation(unsigned num_of_turns);
         
+        struct RunSimulationSetting {
+            RunSimulationSetting(unsigned num_of_turns, const nsCoord::Coord& coordinate, const SimulationSettings& settings);
+
+            unsigned m_num_of_turns = 0;
+            nsCoord::Coord m_coordinate = { 0, 0 };
+            SimulationSettings m_simulation_settings = { };
+        };
         /*--------------------------------------------------------------------------------.
             This function is nearly the same as the above function (and will actually call)
             the above function. It bundles the set_simulation_environment and set_simulat-
             ion_settings functions with the standard run_simulation function.
         ---------------------------------------------------------------------------------*/
-        SimulationResult run_simulation(unsigned max_x, unsigned max_y, unsigned num_of_searchers, unsigned num_of_targets, unsigned frequency_false_pos);
+        SimulationResult run_simulation(unsigned num_of_turns, const nsCoord::Coord& coordinate, const SimulationSettings& settings);
 
         void reset_simulation();
         
@@ -146,9 +163,10 @@ namespace nsSARsimulation {
         bool check_settings();
 
         nsEnvironment::Environment m_simulation_environment;
-        SimulationResult m_results;  
+        SimulationSearchAgents m_list_of_agents = { 0 };
+        SimulationResult m_results;
         SimulationSettings m_settings;
     };
 }
 
-#endif
+#endif // SARSIMULATION_HPP

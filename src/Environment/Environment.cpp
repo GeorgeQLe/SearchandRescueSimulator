@@ -9,18 +9,24 @@
 #include "Environment/Support/Tiles/Target.hpp"
 
 nsEnvironment::GridTile nsEnvironment::AdjacentTiles::generate_random_grid_tile(const nsEnvironment::EnvironmentGrid& sim_grid, const nsCoord::Coord& current_coords) {
+    // grabs all of the adjacent tiles (if there are any) to the
+    // current coordinate
     this->set_adjacent_tile_types(sim_grid, current_coords);
 
+    // generates a random number between 1-100
     std::mt19937 gen(std::random_device{}());
     std::uniform_int_distribution<> dist(1, 100);
     int random_number = dist(gen); 
 
+    // if the random number is one, then make the current tile a target
     if(random_number == 1) {
         return nsEnvironment::GridTile(new nsTarget::Target(current_coords, this->count_tile_probabilities()));
     }
-    else if(random_number > 1 && random_number < 10) {
+    // if the random number is between 2 and 10, then make the current tile a false positive
+    else if(random_number > 1 && random_number <= 10) {
         return nsEnvironment::GridTile(new nsFalsePositive::FalsePositive(current_coords, this->count_tile_probabilities()));
     }
+    // if the random number is greater than 10 then make it empty
     else {
         return nsEnvironment::GridTile(new nsEmpty::Empty(current_coords, this->count_tile_probabilities()));
     }
@@ -28,35 +34,36 @@ nsEnvironment::GridTile nsEnvironment::AdjacentTiles::generate_random_grid_tile(
     return nullptr;
 }
 
-nsTileType::TileType nsEnvironment::AdjacentTiles::count_tile_probabilities() {
-    nsTileType::TileProbability f_return_probabilities;
-    for(unsigned i = 0; i < static_cast<unsigned>(nsTileType::TileType::COUNT); ++i) {
+nsTerrainType::TerrainType nsEnvironment::AdjacentTiles::count_tile_probabilities() {
+    // totals up the various probabilities of the terrains
+    nsTerrainType::TileProbability f_return_probabilities;
+    for(unsigned i = 0; i < static_cast<unsigned>(nsTerrainType::TerrainType::count); ++i) {
         if(this->m_tiles[i] == nullptr) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::NOTRELEVANT] += 0;
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::notrelevant] += 0;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::HOME) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::HOME] += 0;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::home) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::home] += 0;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::PLAINS) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::PLAINS] += 12.5;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::plains) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::plains] += 12.5;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::TREE) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::TREE] += 12.5;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::forest) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::forest] += 12.5;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::SWAMP) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::SWAMP] += 12.5;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::swamp) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::swamp] += 12.5;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::HILL) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::HILL] += 12.5;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::hill) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::hill] += 12.5;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::MOUNTAIN) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::MOUNTAIN] += 12.5;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::mountain) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::mountain] += 12.5;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::LAKE) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::LAKE] += 12.5;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::lake) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::lake] += 12.5;
         }
-        else if(this->m_tiles[i]->get_tile_type() == nsTileType::TileType::RIVER) {
-            f_return_probabilities.m_probabilities[nsTileType::TileType::RIVER] += 12.5;
+        else if(this->m_tiles[i]->get_terrain_type() == nsTerrainType::TerrainType::river) {
+            f_return_probabilities.m_probabilities[nsTerrainType::TerrainType::river] += 12.5;
         }
     }
 
@@ -142,10 +149,10 @@ nsEnvironment::GenerateGridError nsEnvironment::Environment::check_environment_s
 
 nsEnvironment::EnvironmentErrorInformation nsEnvironment::Environment::draw_grid() {
     if(m_grid->size() == 0) {
-        return { {true, enEnvironmentErrorTypes::GRID_SIZE_IS_ZERO}, "The grid size is of size zero." };
+        return { { true, enEnvironmentErrorTypes::grid_size_is_zero }, "The grid size is of size zero." };
     }
     else if (this->check_environment_settings().first) {
-        return { { true, enEnvironmentErrorTypes::ENVIRONMENT_SETTINGS_NOT_SET}, "The settings of the environment is not yet set" };
+        return { { true, enEnvironmentErrorTypes::environment_settings_not_set }, "The settings of the environment is not yet set" };
     }
     std::cout << "Current search grid\n";
     for(unsigned x = 0; x < m_grid->size(); ++x) {
@@ -167,6 +174,9 @@ nsEnvironment::GenerateGridErrorInformation nsEnvironment::Environment::generate
         for(unsigned x = 0; x < this->m_settings.m_max_x; ++x) {
             for(unsigned y = 0;y < this->m_settings.m_max_y; ++y) {
                 GridTile f_temp_tile = this->generate_random_grid_tile({x, y});
+                if(f_temp_tile->get_tile_type() == nsTile::enTileType::target) {
+
+                }
                 (*this->m_grid)[x].push_back(f_temp_tile);
             }
         }
@@ -180,10 +190,6 @@ void nsEnvironment::Environment::reset_grid() {
     this->m_grid = nullptr;
 }
 
-nsEnvironment::EnvironmentTurnResult nsEnvironment::Environment::resolve_turn() {
-    
-}
-
-nsEnvironment::EnvironmentFinalResult nsEnvironment::Environment::resolve_final_turn() {
+nsEnvironment::EnvironmentTurnResult nsEnvironment::Environment::check_adjacent_tiles(const nsCoord::Coord& current_agent_location) {
 
 }

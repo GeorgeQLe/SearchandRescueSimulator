@@ -77,7 +77,7 @@ namespace nsNeuron {
             m_weight_value = std::shared_ptr<std::pair<bool, double>>(new std::pair<bool, double>(false, -1.0));
         }
 
-        std::shared_ptr<std::pair<bool, double>> m_weight_value = nullptr;
+        std::shared_ptr<std::pair<bool, double>> m_weight_value;
     };
 
     class Neuron {

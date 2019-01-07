@@ -1,6 +1,6 @@
 /*  Copyright 2018 George Le
 
-    
+    This file contains the declaration of the Tile class and its supporting structs and enumerated classes.
 */
 #ifndef TILE_HPP
 #define TILE_HPP
@@ -8,41 +8,50 @@
 #include <iostream> // std::ostream
 
 #include "Environment/Support/Coord.hpp" // Coord
-#include "Environment/Support/EnvironmentTypes/TileType.hpp" // TileType
+#include "Environment/Support/EnvironmentTypes/TerrainType.hpp" // TerrainType
 
 namespace nsTile {
-
-    enum class emSearchErrorType {
-        NO_ERROR,
-        USING_BASE_CLASS,
-        COUNT
+    enum class enSearchErrorType {
+        no_error,
+        using_base_class,
+        count
     };
-    using SearchError = std::pair<bool, emSearchErrorType>;
+    using SearchError = std::pair<bool, enSearchErrorType>;
 
     struct SearchErrorInformation {
         SearchErrorInformation() { }
         SearchErrorInformation(const SearchError& error, const std::string& error_message) {
-            if(error.first)
+            if(error.first) {
                 m_error = error;
                 m_error_message = error_message;
+            }
         }
         
-        SearchError m_error = { false, emSearchErrorType::NO_ERROR };
+        SearchError m_error = { false, enSearchErrorType::no_error };
         std::string m_error_message = "NO ERROR YET";
+    };
+
+    enum class enTileType {
+        notrelevant,
+        empty,
+        falsepos,
+        target,
+        count
     };
 
     class Tile {
         public:
         // required for the class constructor is the x and y coordinates for 
         // the tile
-        Tile(unsigned x, unsigned y, const nsTileType::TileType& new_tile_type) : m_tile_coords(x, y), m_terrain(new_tile_type) { }
-        Tile(const nsCoord::Coord& coordinates, const nsTileType::TileType& new_tile_type) : m_tile_coords(coordinates), m_terrain(new_tile_type) { }
+        Tile(unsigned x, unsigned y, const nsTerrainType::TerrainType& new_tile_type) : m_tile_coords(x, y), m_terrain_type(new_tile_type) { }
+        Tile(const nsCoord::Coord& coordinates, const nsTerrainType::TerrainType& new_tile_type) : m_tile_coords(coordinates), m_terrain_type(new_tile_type) { }
 
         // accessor function
-        nsTileType::TileType get_tile_type() const { return m_terrain; } 
+        nsTerrainType::TerrainType get_terrain_type() const { return m_terrain_type; } 
+        enTileType get_tile_type() const { return m_tile_type; }
 
         // mutator function
-        void set_tile_type(const nsTileType::TileType& new_tile_type) { m_terrain = new_tile_type; }
+        void set_tile_type(const nsTerrainType::TerrainType& new_tile_type) { m_terrain_type = new_tile_type; }
 
         /*-----------------------------------------------------------------
             This function simulates a search of this tile on the grid and
@@ -72,7 +81,8 @@ namespace nsTile {
         Tile() : m_tile_coords(-1, -1) {}
 
         nsCoord::Coord m_tile_coords;
-        nsTileType::TileType m_terrain;
+        nsTerrainType::TerrainType m_terrain_type;
+        enTileType m_tile_type;
 
         // the symbol for a tile 
         char m_symbol;

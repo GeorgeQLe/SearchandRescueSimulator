@@ -1,5 +1,6 @@
 /*  Copyright 2018 George Le
 
+    This is a future feature.
 */
 #ifndef AREATYPE_HPP
 #define AREATYPE_HPP

@@ -1,9 +1,9 @@
 #include "Simulation/SearchAgents/SearchAgentsType/Drone.hpp"
 
-nsSearchAgent::enDirection nsDrone::Drone::move() {
+nsSearchAgent::enDirection nsDrone::Drone::move(const nsEnvironment::AdjacentTiles& current_adjacent_tiles) {
     
 }
 
-nsSearchAgent::enDirection nsDrone::Drone::search() {
-
+bool nsDrone::Drone::search() {
+    return true;
 }
