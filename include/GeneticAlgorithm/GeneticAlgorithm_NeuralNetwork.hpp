@@ -9,17 +9,20 @@
 
 namespace nsGeneticAlgorithm_NeuralNetwork {
 
-    using Individual = nsNeuralNetwork::NeuralNetwork;
-    using Population = std::vector<Individual>;
+    template <typename T>
+    using Individual = nsNeuralNetwork::NeuralNetwork<T>;
+    template <typename T>
+    using Population = std::vector<Individual<T>>;
     using Scores = std::vector<std::pair<unsigned, double>>;
 
+    template <typename T>
     struct GeneticAlgorithmPopulationContainer {
         GeneticAlgorithmPopulationContainer() { }
 
         // this holds the current and the previous generations of the genetic algorithm
-        std::pair<Population, Population> m_generations;
+        std::pair<Population<T>, Population<T>> m_generations;
         // temporarily holds the fittest population for crossover
-        Population m_fittest_population;
+        Population<T> m_fittest_population;
     };
 
     struct GeneticAlgorithmPopulationInformation {
@@ -40,6 +43,7 @@ namespace nsGeneticAlgorithm_NeuralNetwork {
         unsigned m_mutation_rate = 1; // default 1
     };
 
+    template<typename T>
     class GeneticAlgorithm_NeuralNetwork {
         public:
         // singleton accessor function
@@ -58,7 +62,7 @@ namespace nsGeneticAlgorithm_NeuralNetwork {
             User calls this function which will return the fittest individual
             that the genetic algorithm will generate. 
         --------------------------------------------------------------------*/
-        Individual generate_fittest_individual(const Population& test_population, const Scores& scores_of_neural_networks);
+        Individual<T> generate_fittest_individual(const Population<T>& test_population, const Scores& scores_of_neural_networks);
 
         private:
         /*--------------------------------------------------------------------
@@ -80,7 +84,7 @@ namespace nsGeneticAlgorithm_NeuralNetwork {
             by the genetic algorithm and be parsed by a GA information
             table.
         -----------------------------------------------------------------*/
-        Individual last_fitness_function(const Population& last_generation, const Scores& scores);
+        Individual<T> last_fitness_function(const Population<T>& last_generation, const Scores& scores);
 
         /*-----------------------------------------------------------------
             Performs two point crossover on the parent organism strings.
@@ -90,11 +94,13 @@ namespace nsGeneticAlgorithm_NeuralNetwork {
         /*--------------------------------------------------------------------
             Performs a bit string mutation on the child of the new generation.
         --------------------------------------------------------------------*/
-        void bit_string_mutation(Individual& child);
+        void bit_string_mutation(Individual<T>& child);
 
-        GeneticAlgorithmPopulationContainer m_population;
+        GeneticAlgorithmPopulationContainer<T> m_population;
         GeneticAlgorithmPopulationInformation m_population_information;
     };
 }
+
+#include "GeneticAlgorithm/implementation/GeneticAlgorithm_NeuralNetwork.imp"
 
 #endif

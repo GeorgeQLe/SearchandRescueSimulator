@@ -1,0 +1,16 @@
+#ifndef DRONE_IMP
+#define DRONE_IMP
+
+#include "Simulation/SearchAgents/SearchAgentsType/Drone.hpp"
+
+template <typename T>
+nsSearchAgent::enDirection nsDrone::Drone<T>::move(const nsEnvironment::AdjacentTiles& current_adjacent_tiles) {
+    
+}
+
+template <typename T>
+bool nsDrone::Drone<T>::search() {
+    return true;
+}
+
+#endif // DRONE_IMP

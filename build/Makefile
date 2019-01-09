@@ -177,194 +177,59 @@ src/Environment/Environment.cpp.s:
 	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Environment/Environment.cpp.s
 .PHONY : src/Environment/Environment.cpp.s
 
-src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.o: src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o
+src/GeneticAlgorithm/GeneticAlgorithmBool.o: src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o
 
-.PHONY : src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.o
-
-# target to build an object file
-src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o
-.PHONY : src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o
-
-src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.i: src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.i
-
-.PHONY : src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.i
-
-# target to preprocess a source file
-src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.i:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.i
-.PHONY : src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.i
-
-src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.s: src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.s
-
-.PHONY : src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.s
-
-# target to generate assembly for a file
-src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.s:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.s
-.PHONY : src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.s
-
-src/NeuralNetwork/NeuralNetwork.o: src/NeuralNetwork/NeuralNetwork.cpp.o
-
-.PHONY : src/NeuralNetwork/NeuralNetwork.o
+.PHONY : src/GeneticAlgorithm/GeneticAlgorithmBool.o
 
 # target to build an object file
-src/NeuralNetwork/NeuralNetwork.cpp.o:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o
-.PHONY : src/NeuralNetwork/NeuralNetwork.cpp.o
+src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o:
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o
+.PHONY : src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o
 
-src/NeuralNetwork/NeuralNetwork.i: src/NeuralNetwork/NeuralNetwork.cpp.i
+src/GeneticAlgorithm/GeneticAlgorithmBool.i: src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.i
 
-.PHONY : src/NeuralNetwork/NeuralNetwork.i
+.PHONY : src/GeneticAlgorithm/GeneticAlgorithmBool.i
 
 # target to preprocess a source file
-src/NeuralNetwork/NeuralNetwork.cpp.i:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.i
-.PHONY : src/NeuralNetwork/NeuralNetwork.cpp.i
+src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.i:
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.i
+.PHONY : src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.i
 
-src/NeuralNetwork/NeuralNetwork.s: src/NeuralNetwork/NeuralNetwork.cpp.s
+src/GeneticAlgorithm/GeneticAlgorithmBool.s: src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.s
 
-.PHONY : src/NeuralNetwork/NeuralNetwork.s
+.PHONY : src/GeneticAlgorithm/GeneticAlgorithmBool.s
 
 # target to generate assembly for a file
-src/NeuralNetwork/NeuralNetwork.cpp.s:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.s
-.PHONY : src/NeuralNetwork/NeuralNetwork.cpp.s
+src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.s:
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.s
+.PHONY : src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.s
 
-src/NeuralNetwork/NeuralNetworkController.o: src/NeuralNetwork/NeuralNetworkController.cpp.o
+src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.o: src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o
 
-.PHONY : src/NeuralNetwork/NeuralNetworkController.o
+.PHONY : src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.o
 
 # target to build an object file
-src/NeuralNetwork/NeuralNetworkController.cpp.o:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o
-.PHONY : src/NeuralNetwork/NeuralNetworkController.cpp.o
+src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o:
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o
+.PHONY : src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o
 
-src/NeuralNetwork/NeuralNetworkController.i: src/NeuralNetwork/NeuralNetworkController.cpp.i
+src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.i: src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.i
 
-.PHONY : src/NeuralNetwork/NeuralNetworkController.i
-
-# target to preprocess a source file
-src/NeuralNetwork/NeuralNetworkController.cpp.i:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.i
-.PHONY : src/NeuralNetwork/NeuralNetworkController.cpp.i
-
-src/NeuralNetwork/NeuralNetworkController.s: src/NeuralNetwork/NeuralNetworkController.cpp.s
-
-.PHONY : src/NeuralNetwork/NeuralNetworkController.s
-
-# target to generate assembly for a file
-src/NeuralNetwork/NeuralNetworkController.cpp.s:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.s
-.PHONY : src/NeuralNetwork/NeuralNetworkController.cpp.s
-
-src/NeuralNetwork/NeuralNetworkFactory.o: src/NeuralNetwork/NeuralNetworkFactory.cpp.o
-
-.PHONY : src/NeuralNetwork/NeuralNetworkFactory.o
-
-# target to build an object file
-src/NeuralNetwork/NeuralNetworkFactory.cpp.o:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o
-.PHONY : src/NeuralNetwork/NeuralNetworkFactory.cpp.o
-
-src/NeuralNetwork/NeuralNetworkFactory.i: src/NeuralNetwork/NeuralNetworkFactory.cpp.i
-
-.PHONY : src/NeuralNetwork/NeuralNetworkFactory.i
+.PHONY : src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.i
 
 # target to preprocess a source file
-src/NeuralNetwork/NeuralNetworkFactory.cpp.i:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.i
-.PHONY : src/NeuralNetwork/NeuralNetworkFactory.cpp.i
+src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.i:
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.i
+.PHONY : src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.i
 
-src/NeuralNetwork/NeuralNetworkFactory.s: src/NeuralNetwork/NeuralNetworkFactory.cpp.s
+src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.s: src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.s
 
-.PHONY : src/NeuralNetwork/NeuralNetworkFactory.s
-
-# target to generate assembly for a file
-src/NeuralNetwork/NeuralNetworkFactory.cpp.s:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.s
-.PHONY : src/NeuralNetwork/NeuralNetworkFactory.cpp.s
-
-src/NeuralNetwork/Neuron.o: src/NeuralNetwork/Neuron.cpp.o
-
-.PHONY : src/NeuralNetwork/Neuron.o
-
-# target to build an object file
-src/NeuralNetwork/Neuron.cpp.o:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o
-.PHONY : src/NeuralNetwork/Neuron.cpp.o
-
-src/NeuralNetwork/Neuron.i: src/NeuralNetwork/Neuron.cpp.i
-
-.PHONY : src/NeuralNetwork/Neuron.i
-
-# target to preprocess a source file
-src/NeuralNetwork/Neuron.cpp.i:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.i
-.PHONY : src/NeuralNetwork/Neuron.cpp.i
-
-src/NeuralNetwork/Neuron.s: src/NeuralNetwork/Neuron.cpp.s
-
-.PHONY : src/NeuralNetwork/Neuron.s
+.PHONY : src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.s
 
 # target to generate assembly for a file
-src/NeuralNetwork/Neuron.cpp.s:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.s
-.PHONY : src/NeuralNetwork/Neuron.cpp.s
-
-src/Simulation/SARsimulation.o: src/Simulation/SARsimulation.cpp.o
-
-.PHONY : src/Simulation/SARsimulation.o
-
-# target to build an object file
-src/Simulation/SARsimulation.cpp.o:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o
-.PHONY : src/Simulation/SARsimulation.cpp.o
-
-src/Simulation/SARsimulation.i: src/Simulation/SARsimulation.cpp.i
-
-.PHONY : src/Simulation/SARsimulation.i
-
-# target to preprocess a source file
-src/Simulation/SARsimulation.cpp.i:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.i
-.PHONY : src/Simulation/SARsimulation.cpp.i
-
-src/Simulation/SARsimulation.s: src/Simulation/SARsimulation.cpp.s
-
-.PHONY : src/Simulation/SARsimulation.s
-
-# target to generate assembly for a file
-src/Simulation/SARsimulation.cpp.s:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.s
-.PHONY : src/Simulation/SARsimulation.cpp.s
-
-src/Simulation/SearchAgents/SearchAgentsType/Drone.o: src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o
-
-.PHONY : src/Simulation/SearchAgents/SearchAgentsType/Drone.o
-
-# target to build an object file
-src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o
-.PHONY : src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o
-
-src/Simulation/SearchAgents/SearchAgentsType/Drone.i: src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.i
-
-.PHONY : src/Simulation/SearchAgents/SearchAgentsType/Drone.i
-
-# target to preprocess a source file
-src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.i:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.i
-.PHONY : src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.i
-
-src/Simulation/SearchAgents/SearchAgentsType/Drone.s: src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.s
-
-.PHONY : src/Simulation/SearchAgents/SearchAgentsType/Drone.s
-
-# target to generate assembly for a file
-src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.s:
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.s
-.PHONY : src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.s
+src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.s:
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.s
+.PHONY : src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.s
 
 # Help Target
 help:
@@ -381,27 +246,12 @@ help:
 	@echo "... src/Environment/Environment.o"
 	@echo "... src/Environment/Environment.i"
 	@echo "... src/Environment/Environment.s"
-	@echo "... src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.o"
-	@echo "... src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.i"
-	@echo "... src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.s"
-	@echo "... src/NeuralNetwork/NeuralNetwork.o"
-	@echo "... src/NeuralNetwork/NeuralNetwork.i"
-	@echo "... src/NeuralNetwork/NeuralNetwork.s"
-	@echo "... src/NeuralNetwork/NeuralNetworkController.o"
-	@echo "... src/NeuralNetwork/NeuralNetworkController.i"
-	@echo "... src/NeuralNetwork/NeuralNetworkController.s"
-	@echo "... src/NeuralNetwork/NeuralNetworkFactory.o"
-	@echo "... src/NeuralNetwork/NeuralNetworkFactory.i"
-	@echo "... src/NeuralNetwork/NeuralNetworkFactory.s"
-	@echo "... src/NeuralNetwork/Neuron.o"
-	@echo "... src/NeuralNetwork/Neuron.i"
-	@echo "... src/NeuralNetwork/Neuron.s"
-	@echo "... src/Simulation/SARsimulation.o"
-	@echo "... src/Simulation/SARsimulation.i"
-	@echo "... src/Simulation/SARsimulation.s"
-	@echo "... src/Simulation/SearchAgents/SearchAgentsType/Drone.o"
-	@echo "... src/Simulation/SearchAgents/SearchAgentsType/Drone.i"
-	@echo "... src/Simulation/SearchAgents/SearchAgentsType/Drone.s"
+	@echo "... src/GeneticAlgorithm/GeneticAlgorithmBool.o"
+	@echo "... src/GeneticAlgorithm/GeneticAlgorithmBool.i"
+	@echo "... src/GeneticAlgorithm/GeneticAlgorithmBool.s"
+	@echo "... src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.o"
+	@echo "... src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.i"
+	@echo "... src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.s"
 .PHONY : help
 
 

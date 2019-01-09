@@ -8,8 +8,9 @@
 #include "Simulation/SARsimulation.hpp"
 
 int main() {
-    nsSARsimulation::SARsimulation simulation = nsSARsimulation::SARsimulation::get_instance();
+    nsSARsimulation::SARsimulation<double> simulation = nsSARsimulation::SARsimulation<double>::get_instance();
 
-    nsSARsimulation::SimulationResult results = simulation.run_simulation(50);
+    nsSARsimulation::SimulationResult results = simulation.run_simulation(50);  
+
     return 0;
 }

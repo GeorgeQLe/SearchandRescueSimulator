@@ -3,27 +3,31 @@
     This file provides the definition for the class constructor for the NeuronError struct
     and some of the member functions of the Neuron class
 */
+#ifndef NEURON_IMP
+#define NEURON_IMP
+
 #include "NeuralNetwork/Neuron.hpp"
 
-nsNeuron::NeuronError::NeuronError(enNEURON_ERROR_CODES code) : m_error_code(code) {
-    if(code == enNEURON_ERROR_CODES::CURRENT_LAYER) {
+nsNeuron::NeuronError::NeuronError(enNeuronErrorTypes code) : m_error_code(code) {
+    if(code == enNeuronErrorTypes::current_layer) {
         this->m_error_message = "The current layer is not yet set.";
     }
-    else if(code == enNEURON_ERROR_CODES::NEURON_TARGETS) {
+    else if(code == enNeuronErrorTypes::neuron_targets) {
         this->m_error_message = "There is no target neurons set yet?";
     }
-    else if(code == enNEURON_ERROR_CODES::NODE_ID) {
+    else if(code == enNeuronErrorTypes::node_id) {
         this->m_error_message = "There is no set neuron id";
     }
-    else if(code == enNEURON_ERROR_CODES::NO_INPUTS) {
+    else if(code == enNeuronErrorTypes::no_inputs) {
         this->m_error_message = "There are no input to the neuron.";
     }
-    else if(code == enNEURON_ERROR_CODES::NO_WEIGHTS) {
+    else if(code == enNeuronErrorTypes::no_weights) {
         this->m_error_message = "The neuron weight has not been set yet.";
     }
 }
 
-void nsNeuron::Neuron::add_target_neuron(unsigned target_layer_index, unsigned target_node_id) {
+template<typename T>
+void nsNeuron::Neuron<T>::add_target_neuron(unsigned target_layer_index, unsigned target_node_id) {
     // checks to see if the map of coordinates to target neurons exists and if not then build it
     if(this->m_target_neurons.m_target_coords == nullptr) {
         this->m_target_neurons.m_target_coords = std::shared_ptr<std::map<unsigned, std::vector<unsigned>>>(new std::map<unsigned, std::vector<unsigned>>);
@@ -38,35 +42,34 @@ void nsNeuron::Neuron::add_target_neuron(unsigned target_layer_index, unsigned t
     }
 }
 
-void nsNeuron::Neuron::add_neuron_inputs_bool(const std::vector<bool>& input_values) {
-
+template<typename T>
+void nsNeuron::Neuron<T>::add_neuron_inputs(const std::vector<T>& input_values) { 
+    this->m_input_values = input_values;
 }
 
-void nsNeuron::Neuron::add_neuron_inputs_double(const std::vector<double>& input_values) { 
-    this->m_input_values_double = std::shared_ptr<std::vector<double>>(new std::vector<double>(input_values));
-}
-
-nsNeuron::NeuronIntegrityCheckResult nsNeuron::Neuron::ensure_neuron_integrity() {
+template<typename T>
+nsNeuron::NeuronIntegrityCheckResult nsNeuron::Neuron<T>::ensure_neuron_integrity() {
     if(this->m_components.m_current_layer == 0) {
-        return { enNEURON_ERROR_CODES::CURRENT_LAYER };
+        return { enNeuronErrorTypes::current_layer };
     }
     else if(this->m_components.m_node_id == 0) {
-        return { enNEURON_ERROR_CODES::NODE_ID };
+        return { enNeuronErrorTypes::node_id };
     }
     else if(this->m_target_neurons.m_target_coords == nullptr) {
-        return { enNEURON_ERROR_CODES::NEURON_TARGETS };
+        return { enNeuronErrorTypes::neuron_targets };
     }
     else if(this->m_weight.m_weight_value->first == false) {
-        return { enNEURON_ERROR_CODES::NO_WEIGHTS };
+        return { enNeuronErrorTypes::no_weights };
     }
     return { };
 }
 
-nsNeuron::NeuronReturnValue nsNeuron::Neuron::evaluate() {
+template <typename T>
+nsNeuron::NeuronReturnValue<T> nsNeuron::Neuron<T>::evaluate() {
     if(!ensure_neuron_integrity().m_has_error) {
-        enNEURON_ERROR_CODES code = ensure_neuron_integrity().m_error.m_error_code;
+        enNeuronErrorTypes code = ensure_neuron_integrity().m_error.m_error_code;
         return { NeuronError(code, "Cannot evaluate the neuron, it has not been properly set up") }; 
-    } 
+    }
     
     if(this->m_input_values_bool) {
         bool input_value = false;
@@ -89,13 +92,14 @@ nsNeuron::NeuronReturnValue nsNeuron::Neuron::evaluate() {
         return { input_value * m_weight.m_weight_value->second, m_target_neurons };
     }
     
-    return { NeuronError(enNEURON_ERROR_CODES::NO_INPUTS) };
+    return { NeuronError(enNeuronErrorTypes::no_inputs) };
 }
 
+template <typename T>
 // for the input layer neurons, who do not initially have input values
-nsNeuron::NeuronReturnValue nsNeuron::Neuron::evaluate(const std::vector<double>& input_values) { 
+nsNeuron::NeuronReturnValue<T> nsNeuron::Neuron<T>::evaluate(const std::vector<T>& input_values) { 
     if(!ensure_neuron_integrity().m_has_error) {
-        enNEURON_ERROR_CODES code = ensure_neuron_integrity().m_error.m_error_code;
+        enNeuronErrorTypes code = ensure_neuron_integrity().m_error.m_error_code;
         return { NeuronError(code, "Cannot evaluate the neuron, it has not been properly set up") }; 
     } 
     
@@ -107,3 +111,5 @@ nsNeuron::NeuronReturnValue nsNeuron::Neuron::evaluate(const std::vector<double>
 
     return { input_value * m_weight.m_weight_value->second, m_target_neurons };
 }
+
+#endif // NEURON_IMP

@@ -41,7 +41,7 @@ namespace nsSearchAgent {
         public:
         virtual nsSearchAgent::SearchAgentActionErrorInformation execute() = 0;
     };
-
+    
     class SearchAgent {
         public:
         SearchAgent() { }

@@ -1,11 +1,15 @@
 /*  Copyright 2018 George Le
 
 */
+#ifndef NEURALNETWORK_IMP
+#define NEURALNETWORK_IMP
+
 #include <iostream> // std::cout
 
 #include "NeuralNetwork/NeuralNetwork.hpp"
 
-nsNeuralNetwork::NeuralNetworkLayerConstructionResult nsNeuralNetwork::NeuralNetwork::add_new_layer(unsigned layer_index, const nsNeuralNetwork::NeuralNetworkLayer& new_layer_of_neurons) {
+template <typename T>
+nsNeuralNetwork::NeuralNetworkLayerConstructionResult nsNeuralNetwork::NeuralNetwork<T>::add_new_layer(unsigned layer_index, const NeuralNetworkLayer<T>& new_layer_of_neurons) {
     // checks to make sure that the passed index is within the bounds of the neural network
     if(layer_index < this->m_neural_network_information.m_num_of_layers) {
         // determines if the passed index of the new layer is already in the neural network
@@ -37,7 +41,8 @@ nsNeuralNetwork::NeuralNetworkLayerConstructionResult nsNeuralNetwork::NeuralNet
     return {};
 }
 
-nsNeuralNetwork::NeuralNetworkLayerConstructionResult nsNeuralNetwork::NeuralNetwork::overwrite_layer(unsigned layer_index, const nsNeuralNetwork::NeuralNetworkLayer& replacement_layer_of_neurons) {
+template <typename T>
+nsNeuralNetwork::NeuralNetworkLayerConstructionResult nsNeuralNetwork::NeuralNetwork<T>::overwrite_layer(unsigned layer_index, const NeuralNetworkLayer<T>& replacement_layer_of_neurons) {
     if(layer_index >= this->m_neural_network_information.m_num_of_layers) {
         return {"Error: The layer does not connect to the rest of the neural network."};
     }
@@ -48,7 +53,8 @@ nsNeuralNetwork::NeuralNetworkLayerConstructionResult nsNeuralNetwork::NeuralNet
     return {};
 }
 
-bool nsNeuralNetwork::NeuralNetwork::connecting_to_prev_layer(unsigned current_layer_index) {
+template <typename T>
+bool nsNeuralNetwork::NeuralNetwork<T>::connecting_to_prev_layer(unsigned current_layer_index) {
     if(current_layer_index == 0 || current_layer_index >= this->m_neural_network_information.m_num_of_layers) {
         return false;
     }
@@ -64,7 +70,8 @@ bool nsNeuralNetwork::NeuralNetwork::connecting_to_prev_layer(unsigned current_l
     return true;
 }
 
-bool nsNeuralNetwork::NeuralNetwork::connecting_to_next_layer(unsigned int current_layer_index) {
+template <typename T>
+bool nsNeuralNetwork::NeuralNetwork<T>::connecting_to_next_layer(unsigned int current_layer_index) {
     if(current_layer_index >= this->m_neural_network_information.m_num_of_layers - 1) {
         return false;   
     }
@@ -80,7 +87,8 @@ bool nsNeuralNetwork::NeuralNetwork::connecting_to_next_layer(unsigned int curre
     return true;
 }
 
-bool nsNeuralNetwork::NeuralNetwork::verify_connections() {
+template <typename T>
+bool nsNeuralNetwork::NeuralNetwork<T>::verify_connections() {
     for(unsigned i = 0; i < this->m_neural_network_information.m_num_of_layers; ++i) {
         for(unsigned j = 0; j < this->m_neural_network_layers.m_neurons.size(); ++j) {
             if(!this->m_neural_network_layers.m_neurons.at(i).at(j).ensure_neuron_integrity().m_has_error) {
@@ -94,7 +102,8 @@ bool nsNeuralNetwork::NeuralNetwork::verify_connections() {
     return true;
 }
 
-nsNeuralNetwork::NeuralNetworkReturnDouble nsNeuralNetwork::NeuralNetwork::evaluate_double(const std::vector<double>& input_values) {
+template <typename T>
+nsNeuralNetwork::NeuralNetworkReturnValue<T> nsNeuralNetwork::NeuralNetwork<T>::evaluate(const std::vector<T>& input_values) {
     if(!this->verify_connections()) {
         return { true, "Neural Network error: Connctions error" };
     }
@@ -143,7 +152,25 @@ nsNeuralNetwork::NeuralNetworkReturnDouble nsNeuralNetwork::NeuralNetwork::evalu
     return { f_node_value };
 }
 
-nsNeuralNetwork::NeuralNetworkReturnBool nsNeuralNetwork::NeuralNetwork::evaluate_bool(const std::vector<bool>& input_values) {
+// nsNeuralNetwork::NeuralNetworkReturnBool nsNeuralNetwork::NeuralNetwork::evaluate_bool(const std::vector<bool>& input_values) {
+//     if(!this->verify_connections()) {
+//         return { true, "Neural Network error: Connctions error" };
+//     }
+//     if(input_values.size() != this->m_neural_network_layers.m_neurons.at(0).size()) {
+//         return { true, "There are not enough inputs for the neural network. Either fix the number of inputs or change the number of input layer neurons." };
+//     }
+//     if(this->m_neural_network_layers.m_neurons.at(this->m_neural_network_layers.m_neurons.size() - 1).size() != 1) {
+//         return { true, "There is more than 1 output layer neuron." };
+//     }
+
+//     for(unsigned int i = 0; i < this->m_neural_network_information.m_num_of_layers; ++i) {
+//         // TODO
+//     }
+//     return false;
+// }
+
+template <typename T>
+nsNeuralNetwork::NeuralNetworkReturnValue<T> nsNeuralNetwork::NeuralNetwork<T>::evaluate(const std::vector<T>& input_values, double radix_point) {
     if(!this->verify_connections()) {
         return { true, "Neural Network error: Connctions error" };
     }
@@ -160,19 +187,4 @@ nsNeuralNetwork::NeuralNetworkReturnBool nsNeuralNetwork::NeuralNetwork::evaluat
     return false;
 }
 
-nsNeuralNetwork::NeuralNetworkReturnBool nsNeuralNetwork::NeuralNetwork::evaluate_bool(const std::vector<double>& input_values, double radix_point) {
-    if(!this->verify_connections()) {
-        return { true, "Neural Network error: Connctions error" };
-    }
-    if(input_values.size() != this->m_neural_network_layers.m_neurons.at(0).size()) {
-        return { true, "There are not enough inputs for the neural network. Either fix the number of inputs or change the number of input layer neurons." };
-    }
-    if(this->m_neural_network_layers.m_neurons.at(this->m_neural_network_layers.m_neurons.size() - 1).size() != 1) {
-        return { true, "There is more than 1 output layer neuron." };
-    }
-
-    for(unsigned int i = 0; i < this->m_neural_network_information.m_num_of_layers; ++i) {
-        // TODO
-    }
-    return false;
-}
+#endif // NEURALNETWORK_IMP

@@ -14,13 +14,8 @@ endif()
 set(SAR_SOURCES
     build/driver.cpp
     src/Environment/Environment.cpp
-    src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp
-    src/NeuralNetwork/Neuron.cpp
-    src/NeuralNetwork/NeuralNetwork.cpp
-    src/NeuralNetwork/NeuralNetworkController.cpp
-    src/NeuralNetwork/NeuralNetworkFactory.cpp
-    src/Simulation/SARsimulation.cpp
-    src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp
+    src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities
+    src/GeneticAlgorithm/GeneticAlgorithmBool.cpp
 )
 
 set(SAR_HEADERS
@@ -35,13 +30,20 @@ set(SAR_HEADERS
     include/GeneticAlgorithm/GeneticAlgorithm_NeuralNetwork.hpp
     include/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.hpp
     include/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.hpp
+    include/GeneticProgrammer/implementation/GeneticProgrammer_NeuralNetwork.imp
+    include/NeuralNetwork/Neuron.hpp
     include/NeuralNetwork/NeuralNetwork.hpp
     include/NeuralNetwork/NeuralNetworkController.hpp
     include/NeuralNetwork/NeuralNetworkFactory.hpp
-    include/NeuralNetwork/Neuron.hpp
+    include/NeuralNetwork/implementation/NeuralNetworkController.imp
+    include/NeuralNetwork/implementation/NeuralNetworkFactory.imp
+    include/NeuralNetwork/implementation/NeuralNetwork.imp
+    include/NeuralNetwork/implementation/Neuron.imp
     include/Simulation/SARsimulation.hpp
+    include/Simulation/implementation/SARsimulation.imp
     include/Simulation/SearchAgents/SearchAgents.hpp
     include/Simulation/SearchAgents/SearchAgentsType/Drone.hpp
+    include/Simulation/SearchAgents/SearchAgentsType/implementation/Drone.imp
     include/Simulation/SearchAgents/SearchAgentsType/SearchAgentsTypes.hpp
 )
 

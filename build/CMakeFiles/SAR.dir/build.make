@@ -105,201 +105,71 @@ CMakeFiles/SAR.dir/src/Environment/Environment.cpp.o.provides: CMakeFiles/SAR.di
 CMakeFiles/SAR.dir/src/Environment/Environment.cpp.o.provides.build: CMakeFiles/SAR.dir/src/Environment/Environment.cpp.o
 
 
-CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o: CMakeFiles/SAR.dir/flags.make
-CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o: ../src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp"
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o: CMakeFiles/SAR.dir/flags.make
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o: ../src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp"
 
-CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp" > CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.i
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp" > CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.i
 
-CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp" -o CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.s
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp" -o CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.s
 
-CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.requires:
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.requires:
 
-.PHONY : CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.requires
+.PHONY : CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.requires
 
-CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.provides: CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.provides.build
-.PHONY : CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.provides
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.provides: CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.provides.build
+.PHONY : CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.provides
 
-CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.provides.build: CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o
-
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o: CMakeFiles/SAR.dir/flags.make
-CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o: ../src/NeuralNetwork/Neuron.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/Neuron.cpp"
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/Neuron.cpp" > CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.i
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/Neuron.cpp" -o CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.s
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.requires:
-
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.requires
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.provides: CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.provides.build
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.provides
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.provides.build: CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.provides.build: CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o
 
 
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o: CMakeFiles/SAR.dir/flags.make
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o: ../src/NeuralNetwork/NeuralNetwork.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork.cpp"
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o: CMakeFiles/SAR.dir/flags.make
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o: ../src/GeneticAlgorithm/GeneticAlgorithmBool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp"
 
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork.cpp" > CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.i
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp" > CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.i
 
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetwork.cpp" -o CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.s
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp" -o CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.s
 
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.requires:
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.requires:
 
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.requires
+.PHONY : CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.requires
 
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.provides: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.provides.build
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.provides
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.provides: CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.provides.build
+.PHONY : CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.provides
 
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.provides.build: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o
-
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o: CMakeFiles/SAR.dir/flags.make
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o: ../src/NeuralNetwork/NeuralNetworkController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkController.cpp"
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkController.cpp" > CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.i
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkController.cpp" -o CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.s
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.requires:
-
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.requires
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.provides: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.provides.build
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.provides
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.provides.build: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o
-
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o: CMakeFiles/SAR.dir/flags.make
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o: ../src/NeuralNetwork/NeuralNetworkFactory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkFactory.cpp"
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkFactory.cpp" > CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.i
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/NeuralNetwork/NeuralNetworkFactory.cpp" -o CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.s
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.requires:
-
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.requires
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.provides: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.provides.build
-.PHONY : CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.provides
-
-CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.provides.build: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o
-
-
-CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o: CMakeFiles/SAR.dir/flags.make
-CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o: ../src/Simulation/SARsimulation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SARsimulation.cpp"
-
-CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SARsimulation.cpp" > CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.i
-
-CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SARsimulation.cpp" -o CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.s
-
-CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.requires:
-
-.PHONY : CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.requires
-
-CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.provides: CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.provides.build
-.PHONY : CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.provides
-
-CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.provides.build: CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o
-
-
-CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o: CMakeFiles/SAR.dir/flags.make
-CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o: ../src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o -c "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp"
-
-CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp" > CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.i
-
-CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp" -o CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.s
-
-CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.requires:
-
-.PHONY : CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.requires
-
-CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.provides: CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SAR.dir/build.make CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.provides.build
-.PHONY : CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.provides
-
-CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.provides.build: CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o
+CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.provides.build: CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o
 
 
 # Object files for target SAR
 SAR_OBJECTS = \
 "CMakeFiles/SAR.dir/driver.cpp.o" \
 "CMakeFiles/SAR.dir/src/Environment/Environment.cpp.o" \
-"CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o" \
-"CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o" \
-"CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o" \
-"CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o" \
-"CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o" \
-"CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o" \
-"CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o"
+"CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o" \
+"CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o"
 
 # External object files for target SAR
 SAR_EXTERNAL_OBJECTS =
 
 SAR: CMakeFiles/SAR.dir/driver.cpp.o
 SAR: CMakeFiles/SAR.dir/src/Environment/Environment.cpp.o
-SAR: CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o
-SAR: CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o
-SAR: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o
-SAR: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o
-SAR: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o
-SAR: CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o
-SAR: CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o
+SAR: CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o
+SAR: CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o
 SAR: CMakeFiles/SAR.dir/build.make
 SAR: CMakeFiles/SAR.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable SAR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/George Le/Documents/Github/current_work/Research/GA_SI_SAR/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable SAR"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SAR.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -309,13 +179,8 @@ CMakeFiles/SAR.dir/build: SAR
 
 CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/driver.cpp.o.requires
 CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/Environment/Environment.cpp.o.requires
-CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/GeneticProgrammer/GeneticProgrammer_NeuralNetwork.cpp.o.requires
-CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/NeuralNetwork/Neuron.cpp.o.requires
-CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetwork.cpp.o.requires
-CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkController.cpp.o.requires
-CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/NeuralNetwork/NeuralNetworkFactory.cpp.o.requires
-CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/Simulation/SARsimulation.cpp.o.requires
-CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/Simulation/SearchAgents/SearchAgentsType/Drone.cpp.o.requires
+CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.cpp.o.requires
+CMakeFiles/SAR.dir/requires: CMakeFiles/SAR.dir/src/GeneticAlgorithm/GeneticAlgorithmBool.cpp.o.requires
 
 .PHONY : CMakeFiles/SAR.dir/requires
 

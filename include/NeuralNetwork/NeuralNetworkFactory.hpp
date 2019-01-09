@@ -15,6 +15,7 @@ namespace nsNeuralNetworkFactory {
         std::vector<unsigned int> m_neural_network_ratio;
     };
 
+    template <typename T>
     class NeuralNetworkFactory {
         public:
         static NeuralNetworkFactory& get_instance() {
@@ -22,7 +23,7 @@ namespace nsNeuralNetworkFactory {
             return instance;
         }
 
-        nsNeuralNetwork::NeuralNetwork construct_neural_network(unsigned int num_layers, nsNeuralNetworkFactory::NeuralNetworkLayerSizes layer_ratios);
+        nsNeuralNetwork::NeuralNetwork<T> construct_neural_network(unsigned int num_layers, nsNeuralNetworkFactory::NeuralNetworkLayerSizes layer_ratios);
 
         private:
         /*---------------------------------------------------------------------
@@ -34,5 +35,7 @@ namespace nsNeuralNetworkFactory {
         unsigned int m_current_neural_network_id = 1;
     };
 }
+
+#include "NeuralNetwork/implementation/NeuralNetworkFactory.imp"
 
 #endif // NEURALNETWORKFACTORY_HPP

@@ -1,19 +1,24 @@
+#ifndef GENETICALGORITHM_NEURALNETWORK_IMP
+#define GENETICALGORITHM_NEURALNETWORK_IMP
+
 #include "GeneticAlgorithm/GeneticAlgorithm_NeuralNetwork.hpp"
 #include "GeneticAlgorithm/Utilities/GeneticAlgorithmUtilities.hpp"
 
-nsGeneticAlgorithm_NeuralNetwork::Individual nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork::generate_fittest_individual(const Population& test_population, const Scores& scores_of_neural_networks) {
-    Individual fittest_individual;
+template <typename T>
+nsGeneticAlgorithm_NeuralNetwork::Individual<T> nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork<T>::generate_fittest_individual(const Population<T>& test_population, const Scores& scores_of_neural_networks) {
+    Individual<T> f_fittest_individual;
 
     for (unsigned index_generation = 1; index_generation < this->m_population_information.m_number_of_generations; ++index_generation) {
         fitness_function(scores_of_neural_networks);
         two_point_crossover();
         this->m_population.m_generations.first = this->m_population.m_generations.second;
     }
-    fittest_individual = last_fitness_function(this->m_population.m_generations.first, scores_of_neural_networks);
-    return fittest_individual;
+    f_fittest_individual = last_fitness_function(this->m_population.m_generations.first, scores_of_neural_networks);
+    return f_fittest_individual;
 }
 
-void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork::fitness_function(const Scores& scores) {
+template <typename T>
+void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork<T>::fitness_function(const Scores& scores) {
     // sorts a temporary container 
     Scores sorted_scores = scores;
 
@@ -36,16 +41,17 @@ void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork::fitness_f
     }
 }
 
-nsGeneticAlgorithm_NeuralNetwork::Individual nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork::last_fitness_function(const Population& last_generation, const Scores& scores) {
+template <typename T>
+nsGeneticAlgorithm_NeuralNetwork::Individual<T> nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork<T>::last_fitness_function(const Population<T>& last_generation, const Scores& scores) {
     // initializes a vector of doubles with 0.0 for each of the
     // member of the population
-    Scores average_scores = scores;
+    Scores f_average_scores = scores;
 
     // then find the fittest individual
     double highest_score = 0.0, highest_index = 0;
-    for(unsigned int i = 0; i < average_scores.size(); ++i) {
-        if(average_scores.at(i).second >= highest_score) {
-            highest_score = average_scores.at(i).second;
+    for(unsigned int i = 0; i < f_average_scores.size(); ++i) {
+        if(f_average_scores.at(i).second >= highest_score) {
+            highest_score = f_average_scores.at(i).second;
             highest_index = i;
         }
     }
@@ -53,9 +59,10 @@ nsGeneticAlgorithm_NeuralNetwork::Individual nsGeneticAlgorithm_NeuralNetwork::G
     return last_generation.at(highest_index);
 }
 
-void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork::two_point_crossover() {
-    Individual child1, child2; // std::vector<bool>
-    int index_parent1 = -1, index_parent2 = -1;
+template <typename T>
+void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork<T>::two_point_crossover() {
+    Individual<T> f_child1, f_child2; // std::vector<bool>
+    int f_index_parent1 = -1, f_index_parent2 = -1;
 
     // clear the next generation if it has been used
     if(this->m_population.m_generations.second.size() > 0) {
@@ -73,38 +80,43 @@ void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork::two_point
     // individual to the next generation.
     while(this->m_population.m_generations.second.size() < this->m_population_information.m_size_of_population) {
         // generates where the start and the end points of the uniform crossover
-        unsigned int index_start_flip = nsGeneticAlgorithmUtilities::return_rand_index(0, this->m_population. - 2);
-        unsigned int index_end_flip = nsGeneticAlgorithmUtilities::return_rand_index(index_start_flip + 1, m_number_of_traits - 1);
+        unsigned int f_index_start_flip = nsGeneticAlgorithmUtilities::return_rand_index(0, this->m_population - 2);
+        unsigned int f_index_end_flip = nsGeneticAlgorithmUtilities::return_rand_index(f_index_start_flip + 1, this->m_number_of_traits - 1);
         
         // randomly selects two parents
-        index_parent1 = nsGeneticAlgorithmUtilities::return_rand_index(0, this->m_population.m_fittest_population.size() - 1);
-        index_parent2 = nsGeneticAlgorithmUtilities::return_rand_index(0, this->m_population.m_fittest_population.size() - 1);
+        f_index_parent1 = nsGeneticAlgorithmUtilities::return_rand_index(0, this->m_population.m_fittest_population.size() - 1);
+        f_index_parent2 = nsGeneticAlgorithmUtilities::return_rand_index(0, this->m_population.m_fittest_population.size() - 1);
         
         // creates two children from the two parents
-        child1 = this->m_population.m_fittest_population.at(index_parent1);
-        child2 = this->m_population.m_fittest_population.at(index_parent2);
+        f_child1 = this->m_population.m_fittest_population.at(f_index_parent1);
+        f_child2 = this->m_population.m_fittest_population.at(f_index_parent2);
 
         // applies the crossover to the children at the randomly generated start and end points
-        nsGeneticAlgorithmUtilities::swap_range(child1, child2, { index_start_flip, index_end_flip });
+        nsGeneticAlgorithmUtilities::swap_range(f_child1, f_child2, { f_index_start_flip, f_index_end_flip });
 
         // coin flip to see if the child recieves a mutation
         if(nsGeneticAlgorithmUtilities::percentage_chance(this->m_population_information.m_mutation_rate)) {
-            bit_string_mutation(child1);
+            bit_string_mutation(f_child1);
         }
         if(nsGeneticAlgorithmUtilities::percentage_chance(this->m_population_information.m_mutation_rate)) {
-            bit_string_mutation(child2);
+            bit_string_mutation(f_child2);
         }
         // adds the child to the new generation
-        this->m_population.m_generations.second.push_back(child1);
+        this->m_population.m_generations.second.push_back(f_child1);
         // checks if the child can join the new generation or if its addition will
         // overpopulate the next generation
         if(this->m_population.m_generations.second.size() < this->m_population_information.m_size_of_population) {
             // if there is still space in the next generation, the child is added
-            this->m_population.m_generations.second.push_back(child2);
+            this->m_population.m_generations.second.push_back(f_child2);
         }
     }
 }
 
-void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork::bit_string_mutation(nsGeneticAlgorithm_NeuralNetwork::Individual& child) {
+template <typename T>
+void nsGeneticAlgorithm_NeuralNetwork::GeneticAlgorithm_NeuralNetwork<T>::bit_string_mutation(nsGeneticAlgorithm_NeuralNetwork::Individual<T>& child) {
+    int f_random_index = nsGeneticAlgorithmUtilities::return_rand_index(0, child.size() - 1);
 
+    // if()
 }
+
+#endif // GENETICALGORITHM_NEURALNETWORK_IMP

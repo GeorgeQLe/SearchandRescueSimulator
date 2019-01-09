@@ -31,15 +31,6 @@ bool nsGeneticAlgorithmUtilities::percentage_chance(unsigned int percentage_chan
     return false;
 }
 
-bool nsGeneticAlgorithmUtilities::percentage_chance(unsigned int percentage_chance) {
-    unsigned int num = nsGeneticAlgorithmUtilities::return_rand_index(1, 100);
-
-    if(num <= percentage_chance) {
-        return true;
-    }
-    return false;
-}
-
 int nsGeneticAlgorithmUtilities::partition(std::vector<double>& list, unsigned int left, unsigned int right) {
     // set partition equal to the right
     int f_partition = left;

@@ -79,8 +79,9 @@ namespace nsSARsimulation {
         SimulationTargets m_targets;
     };
 
-    using SimulationSearchAgentFleet = std::vector<std::shared_ptr<nsSearchAgent::SearchAgent>>;
+    template <typename T>
     class SimulationSearchAgents {
+        using SimulationSearchAgentFleet = std::vector<std::shared_ptr<nsSearchAgent::SearchAgent>>;
         public:
         SimulationSearchAgents(unsigned number_of_agents) {
             for(unsigned i = 0; i < number_of_agents; ++i) {
@@ -121,6 +122,7 @@ namespace nsSARsimulation {
         unsigned m_frequency_false_positive = -1;
     };
 
+    template <typename T>
     class SARsimulation {
         public:
         static SARsimulation& get_instance() {
@@ -144,6 +146,7 @@ namespace nsSARsimulation {
             nsCoord::Coord m_coordinate = { 0, 0 };
             SimulationSettings m_simulation_settings = { };
         };
+
         /*--------------------------------------------------------------------------------.
             This function is nearly the same as the above function (and will actually call)
             the above function. It bundles the set_simulation_environment and set_simulat-
@@ -155,7 +158,7 @@ namespace nsSARsimulation {
         
         // mutator functions
         SimulationSetupErrorInformation set_simulation_environment(unsigned max_x, unsigned max_y);
-        SimulationErrorInformation set_simulation_settings(unsigned num_of_searchers, unsigned num_of_targets, unsigned frequency_false_pos);
+        SimulationErrorInformation set_simulation_settings(const SimulationSettings& settings);
 
         private:
         SARsimulation() { }
@@ -163,10 +166,12 @@ namespace nsSARsimulation {
         bool check_settings();
 
         nsEnvironment::Environment m_simulation_environment;
-        SimulationSearchAgents m_list_of_agents = { 0 };
+        SimulationSearchAgents<T> m_list_of_agents = { 0 };
         SimulationResult m_results;
         SimulationSettings m_settings;
     };
 }
+
+#include "Simulation/implementation/SARsimulation.imp"
 
 #endif // SARSIMULATION_HPP

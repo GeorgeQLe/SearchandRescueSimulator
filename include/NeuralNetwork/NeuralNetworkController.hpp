@@ -7,9 +7,9 @@
 #include "NeuralNetwork/NeuralNetwork.hpp"
 
 namespace nsNeuralNetworkController {
-    using NeuralNetworkptrs = std::vector<nsNeuralNetwork::NeuralNetworkptr>;
-
+    template<typename T>
     class NeuralNetworkController {
+        using NeuralNetworkptrs = std::vector<nsNeuralNetwork::NeuralNetworkptr<T>>;
         public:
         // singleton accessor function
         static NeuralNetworkController& get_instance() {
@@ -18,10 +18,9 @@ namespace nsNeuralNetworkController {
         }
 
         // mutator function
-        void set_neural_network(const nsNeuralNetwork::NeuralNetworkptr& new_network);
+        void set_neural_network(const nsNeuralNetwork::NeuralNetworkptr<T>& new_network);
 
-        std::vector<bool> evaluate_bool(const std::vector<bool>& input_values);
-        std::vector<double> evaluate_double(const std::vector<double>& input_values);
+        std::vector<T> evaluate(const std::vector<T>& input_values);
 
         private:
         /*---------------------------------------------------------------------
@@ -35,5 +34,7 @@ namespace nsNeuralNetworkController {
         unsigned int m_current_id;
     };
 }
+
+#include "NeuralNetwork/implementation/NeuralNetworkController.imp"
 
 #endif // NEURALNETWORKCONTROLLER_HPP

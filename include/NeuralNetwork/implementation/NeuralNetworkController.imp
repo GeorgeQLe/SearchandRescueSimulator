@@ -1,0 +1,23 @@
+/*  Copyright 2018 George Le
+
+*/
+#ifndef NEURALNETWORKCONTROLLER_IMP
+#define NEURALNETWORKCONTROLLER_IMP
+
+#include "NeuralNetwork/NeuralNetworkController.hpp"
+
+template <typename T>
+void nsNeuralNetworkController::NeuralNetworkController<T>::set_neural_network(const nsNeuralNetwork::NeuralNetworkptr<T>& new_network) {
+    m_neural_networks.push_back(new_network);
+}
+
+template <typename T>
+std::vector<T> nsNeuralNetworkController::NeuralNetworkController<T>::evaluate(const std::vector<T>& input_values) {
+    std::vector<T> list;
+    for(unsigned int i = 0; i < this->m_neural_networks.size(); ++i) {
+        list.push_back(this->m_neural_networks.at(i)->evaluate(input_values).m_final_value);
+    }
+    return list;
+}
+
+#endif // NEURALNETWORKCONTROLLER_IMP

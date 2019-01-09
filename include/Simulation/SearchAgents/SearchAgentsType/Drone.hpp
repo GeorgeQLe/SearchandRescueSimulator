@@ -41,6 +41,7 @@ namespace nsDrone {
     using DroneActionsPtr = std::shared_ptr<DroneActions>;
     using ListofDroneActions = std::vector<DroneActionsPtr>;
 
+    template <typename T>
     class Drone : public nsSearchAgent::SearchAgent {
         public:
         Drone(const nsCoord::Coord& coordinate) : m_information(coordinate) {}
@@ -65,8 +66,10 @@ namespace nsDrone {
         private:
         ListofDroneActions m_actions;
         DroneInformation m_information;
-        nsNeuralNetwork::NeuralNetworkptr m_drone_controller = nullptr;
+        nsNeuralNetwork::NeuralNetworkptr<T> m_drone_controller = nullptr;
     };
 }
+
+#include "Simulation/SearchAgents/SearchAgentType/Drone.imp"
 
 #endif // DRONE_HPP

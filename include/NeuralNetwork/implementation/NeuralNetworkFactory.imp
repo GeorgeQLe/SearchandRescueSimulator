@@ -1,6 +1,9 @@
 /*  Copyright 2018 George Le
 
 */
+#ifndef NEURALNETWORKFACTORY_IMP
+#define NEURALNETWORKFACTORY_IMP
+
 #include <iostream>
 
 #include "NeuralNetwork/NeuralNetworkFactory.hpp"
@@ -15,16 +18,20 @@ nsNeuralNetworkFactory::NeuralNetworkLayerSizes::NeuralNetworkLayerSizes(const s
     }
 }
 
-nsNeuralNetwork::NeuralNetwork nsNeuralNetworkFactory::NeuralNetworkFactory::construct_neural_network(unsigned int num_layers, nsNeuralNetworkFactory::NeuralNetworkLayerSizes layer_sizes) {
+template <typename T>
+nsNeuralNetwork::NeuralNetwork<T> nsNeuralNetworkFactory::NeuralNetworkFactory<T>::construct_neural_network(unsigned int num_layers, nsNeuralNetworkFactory::NeuralNetworkLayerSizes layer_sizes) {
     // creates an empty neural network with an ID, the tracked ID is then incremented.
-    nsNeuralNetwork::NeuralNetwork return_network(num_layers, this->m_current_neural_network_id++);
-    nsNeuralNetwork::NeuralNetworkLayer neuron_layer;
+    nsNeuralNetwork::NeuralNetwork<T> return_network(num_layers, this->m_current_neural_network_id++);
+    nsNeuralNetwork::NeuralNetworkLayer<T> neuron_layer;
 
     for(unsigned int i = 0; i < num_layers; ++i) {
         for(unsigned int j = 0; j < layer_sizes.m_neural_network_ratio.at(i); ++j) {
-            neuron_layer.push_back(nsNeuron::Neuron());
+            neuron_layer.push_back(nsNeuron::Neuron<T>());
         }
         return_network.add_new_layer(i, neuron_layer);
     }
+
     return return_network;
 }
+
+#endif // NEURALNETWORKFACTORY_IMP

@@ -41,8 +41,11 @@ namespace nsGeneticProgrammer_NeuralNetwork {
         unsigned m_mutation_rate = 1; // default 1
     };
 
-    using RecordNeuralNetworkWeights = std::vector<nsNeuralNetwork::NeuralNetworkLayers>;
+    
+    template <typename T>
     class GeneticProgrammer_NeuralNetwork {
+        using RecordNeuralNetworkWeights = std::vector<nsNeuralNetwork::NeuralNetworkLayers<T>>;
+
         public:
         static GeneticProgrammer_NeuralNetwork& get_instance() {
             static GeneticProgrammer_NeuralNetwork instance;
@@ -53,9 +56,9 @@ namespace nsGeneticProgrammer_NeuralNetwork {
             neural networks. This function will be used by the GeneticProgrammer
             to generate the first initial population of neural networks.
         ----------------------------------------------------------------------*/
-        nsNeuralNetwork::NeuralNetworks generate_neural_networks();
+        GeneticProgrammerErrorInformation generate_neural_networks(nsNeuralNetwork::NeuralNetworks<T>& new_neural_nets);
 
-        nsNeuralNetwork::NeuralNetworks generate_from_existing_neural_networks();
+        GeneticProgrammerErrorInformation generate_from_existing_neural_networks(nsNeuralNetwork::NeuralNetworks<T>& neural_nets_to_be_modified);
 
         private:
         /*--------------------------------------------------------------------
@@ -69,7 +72,7 @@ namespace nsGeneticProgrammer_NeuralNetwork {
             test neural network and record the random weights
             into the m_record_weights.
         ----------------------------------------------------*/
-        nsNeuralNetwork::NeuralNetworkLayers generate_layers();
+        nsNeuralNetwork::NeuralNetworkLayers<T> generate_layers();
 
         // contains all the previous weight combinations and their scores
         RecordNeuralNetworkWeights m_record_weights;

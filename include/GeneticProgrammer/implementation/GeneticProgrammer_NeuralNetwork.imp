@@ -1,0 +1,31 @@
+#ifndef GENETICPROGRAMMER_NEURALNETWORK_IMP
+#define GENETICPROGRAMMER_NEURALNETWORK_IMP
+
+#include "GeneticProgrammer/GeneticProgrammer_NeuralNetwork.hpp"
+#include "NeuralNetwork/NeuralNetworkFactory.hpp"
+
+template <typename T>
+nsGeneticProgrammer_NeuralNetwork::GeneticProgrammerErrorInformation nsGeneticProgrammer_NeuralNetwork::GeneticProgrammer_NeuralNetwork<T>::generate_neural_networks(nsNeuralNetwork::NeuralNetworks<T>& new_neural_net) {
+    if(new_neural_net.size() > 0) {
+        new_neural_net.empty();
+    }
+    
+    nsNeuralNetworkFactory::NeuralNetworkFactory f_neural_network_factory = nsNeuralNetworkFactory::NeuralNetworkFactory::get_instance();
+
+    for(auto it = new_neural_net.begin(); it < new_neural_net.end(); ++it) {
+        (*it)->;
+    }
+
+    return ;
+}
+
+template <typename T>
+nsGeneticProgrammer_NeuralNetwork::GeneticProgrammerErrorInformation nsGeneticProgrammer_NeuralNetwork::GeneticProgrammer_NeuralNetwork<T>::generate_from_existing_neural_networks(nsNeuralNetwork::NeuralNetworks<T>& neural_net_to_be_modified) {
+     if(neural_net_to_be_modified.size() >= 0) {
+
+     }
+
+    return ;
+}
+
+#endif // GENETICPROGRAMMER_NEURALNETWORK_IMP
